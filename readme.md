@@ -2,6 +2,8 @@
 
 Este repositório contém o código fonte e a documentação para um sistema de controle de consultas hospitalares, desenvolvido como parte da aula de MySQL oferecido pelo Instituto PROA.
 
+![banco_de_dados](https://github.com/evertonmdev/BD-Hospital/assets/122039415/1aaaa1e9-f66f-477f-b35f-cb449647b877)
+
 ## Requisitos para o Banco de Dados:
 
 1. ### Cadastro de Médicos:
@@ -30,3 +32,6 @@ Este repositório contém o código fonte e a documentação para um sistema de 
 
 ## Observações:
 - Este sistema foi desenvolvido como parte da aula de MySQL oferecido pelo Instituto PROA, com o objetivo de proporcionar aos alunos uma aplicação prática para o aprendizado dos conceitos de gerenciamento de banco de dados.
+
+
+
