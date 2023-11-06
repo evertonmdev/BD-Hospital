@@ -61,6 +61,25 @@ CREATE TABLE receitas (
   FOREIGN KEY (consulta_id) REFERENCES consultas(id)
 );
 
+CREATE TABLE tipo_quarto (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  descricao VARCHAR(200) NOT NULL,
+  valor_diaria DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE enfermeiro (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  cpf VARCHAR(14) UNIQUE NOT NULL,
+  cre VARCHAR(40) UNIQUE NOT NULL
+);
+
+CREATE TABLE quarto (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  tipo_quarto INT NOT NULL,
+  FOREIGN KEY (tipo_quarto) REFERENCES tipo_quarto(id)
+);
+
 CREATE TABLE internacao (
   id INT AUTO_INCREMENT PRIMARY KEY,
   quarto_id INT NOT NULL,
@@ -75,23 +94,4 @@ CREATE TABLE internacao (
   FOREIGN KEY (enfermeiro_id) REFERENCES enfermeiro(id),
   FOREIGN KEY (paciente_id) REFERENCES pacientes(id),
   FOREIGN KEY (medico_id) REFERENCES medicos(id)
-);
-
-CREATE TABLE quarto (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  tipo_quarto VARCHAR(40) NOT NULL,
-  FOREIGN KEY (tipo_quarto) REFERENCES tipo_quarto(descricao)
-);
-
-CREATE TABLE tipo_quarto (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  descricao VARCHAR(200) NOT NULL,
-  valor_diaria DECIMAL(10,2) NOT NULL
-);
-
-CREATE TABLE enfermeiro (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  nome VARCHAR(255) NOT NULL,
-  cpf VARCHAR(14) UNIQUE NOT NULL,
-  cre VARCHAR(40) UNIQUE NOT NULL
 );
